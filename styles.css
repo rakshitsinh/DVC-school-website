@@ -1,0 +1,622 @@
+/* ================= BASE STYLES ================= */
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+#home {
+    padding: 80px 20px;
+}
+
+#home h2 {
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f4f8;
+    color: #0a192f;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background-color: #0f2341; /* school name background */
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centers title and logo container together */
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+}
+
+.logo-container img {
+    height: 60px; /* smaller logo */
+    width: auto;
+}
+
+.title-container {
+    text-align: center;
+    flex: 1;
+}
+
+.title-container h1 {
+    background-color: #0f2341;
+    color: #ffd700; /* Yellow text */
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 35px;
+    font-weight: bold;
+
+    /* Red Outline */
+    text-shadow:
+        -2px -2px 0 #ff0000,
+         2px -2px 0 #ff0000,
+        -2px  2px 0 #9f0000,
+         2px  2px 0 #900000;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+    background-color: #253d66;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center; /* center nav links */
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #64ffda;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+/* ================= ADMISSION SCROLLING BAR ================= */
+/* ================= ADMISSION SCROLLING BAR ================= */
+
+.admission-bar {
+    width: 100%;
+    background: linear-gradient(90deg, #64ffda, #1f4068);
+    overflow: hidden;
+    position: relative;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.admission-bar a {
+    text-decoration: none;
+    color: #f6ff00;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+/* This is the important part */
+.admission-bar span {
+    position: absolute;
+    top: 50%;                      /* move to middle */
+    transform: translateY(-50%);   /* perfect vertical centering */
+    white-space: nowrap;
+    animation: scrollText 8s linear infinite;
+}
+
+/* Start completely from right outside screen */
+@keyframes scrollText {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -30%;
+    }
+}
+
+/* Pause on hover */
+.admission-bar:hover span {
+    animation-play-state: paused;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #112240;
+}
+
+/* ================= IMAGE SLIDER ================= */
+.slider {
+    width: 80%;
+    max-width: 650px;
+    height: 50vh;   /* 70% of screen height */
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= ABOUT SECTION ================= */
+
+#about {
+    background: #f8fbff;
+    padding: 80px 20px;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #0f2341;
+}
+
+#about p {
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.9;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 12px 25px;
+    background: #1f4068;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0a192f;
+}
+
+/* ================= VISION SECTION ================= */
+.vision {
+    position: relative;
+    overflow: hidden;
+
+}
+.vision-section {
+    position: relative;  /* IMPORTANT */
+    padding: 80px 20px;
+    color: white;
+    overflow: hidden;    /* keeps floating items inside */
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../images/vision-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.vision-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.vision-section h2 {
+    color: #64ffda;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.vision-section p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+.vision-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* ================= OFFER SECTION ================= */
+.offer-section {
+    background: #0f2341;
+    padding: 30px 20px 20px;
+    color: white;
+}
+
+.offer-section h2 {
+    text-align: center;
+    color: #64ffda;
+    margin-bottom: 20px;
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.offer-grid div {
+    background: #112240;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.offer-grid div:hover {
+    transform: translateY(-8px);
+    background: #1f4068;
+}
+
+/* ================= VIDEO SECTION ================= */
+.video-section {
+    background: #112240;
+    padding: 70px 20px;
+    color: white;
+}
+
+.video-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+.video-player iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+}
+
+.video-player, .video-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-description h3 {
+    color: #64ffda;
+    margin-bottom: 15px;
+}
+
+.video-controls {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.video-controls button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 6px;
+}
+
+/* ================= ADMISSIONS SPACING ================= */
+#admissions p, #admissions a, #contact p{
+    margin: 12px 0;
+    line-height: 1.8;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0a192f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+/* ================= FLOATING ADMISSION BUTTON ================= */
+
+.admission-float {
+    position: fixed;
+    bottom: 25px; /* above WhatsApp button */
+    
+    z-index: 999;
+    left: 20px;
+}
+
+/* Desktop Button */
+.admission-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ffb703, #fb8500);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+    transition: 0.3s ease;
+}
+
+.admission-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Icon */
+.admission-icon {
+    font-size: 20px;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(251,133,0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(251,133,0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(251,133,0, 0);
+    }
+}
+
+/* ================= MOBILE VERSION ================= */
+
+@media (max-width: 768px) {
+
+    .admission-btn {
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+    }
+
+    .admission-text {
+        display: none;
+    }
+
+    .admission-icon {
+        font-size: 24px;
+    }
+}
+
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.whatsapp-tooltip {
+    background: #0a192f;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.whatsapp-container:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+.whatsapp-icon img {
+    width: 55px;
+    height: 55px;
+    transition: 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* ================= FLOATING SCHOOL PNG ITEMS ================= */
+
+#floating-container {
+    position: fixed;
+    bottom: -100px; /* start below screen */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 1;
+}
+
+.floating-item {
+    position: absolute;
+    pointer-events: auto;
+    cursor: pointer;
+    animation: floatUp linear forwards;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.95;
+
+}
+
+.floating-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    will-change: transform;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* POP EFFECT */
+.floating-item.pop {
+    transform: scale(1.6);
+    opacity: 0;
+}
+
+/* ================= RESPONSIVE / MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+    .logo-container img {
+        height: 50px; /* smaller logo for mobile */
+    }
+
+    .title-container h1 {
+        font-size: 18px;
+        padding: 6px 10px;
+    }
+
+    .nav-container {
+        justify-content: center; /* center nav links */
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background-color: #253d66;
+        padding: 10px 0;
+        display: none;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+
+
+    /* OFFER SECTION */
+    .offer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 15px;
+    }
+
+    /* VIDEO SECTION */
+    .video-wrapper {
+        flex-direction: column;
+    }
+
+    .video-player iframe {
+        height: 250px;
+    }
+
+    /* SLIDER */
+    .slider {
+        width: 95%;
+        height: 250px;
+    }
+
+    #about {
+        padding: 50px 15px;
+    }
+
+    #about p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 40px 10px;
+    }
+
+    .slider {
+        height: 200px;
+    }
+
+    .video-player iframe {
+        height: 200px;
+    }
+
+    .title-container h1 {
+        font-size: 16px;
+    }
+
+    .offer-grid {
+        grid-template-columns: 1fr; /* single column on tiny screens */
+    }
+}
+
+/* ================= SOCIAL LINKS ================= */
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 22px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Facebook color on hover */
+.social-links a:hover .fa-facebook-f {
+    color: #1877f2;
+}
+
+/* Instagram gradient style */
+.social-links a:hover .fa-instagram {
+    color: #e1306c;
+}
